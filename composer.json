@@ -1,0 +1,15 @@
+{
+  "name": "google-api-quickstart-php",
+  "description": "example use of google api",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Richard Saunders",
+      "email": "richard@sdevsolutions.com"
+    }
+  ],
+  "require": {
+    "google/apiclient": "^2.0"
+  }
+}
