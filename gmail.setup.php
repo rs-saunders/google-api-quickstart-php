@@ -8,7 +8,7 @@ define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/gmail-php-quickstart.json
 define('SCOPES', implode(' ', array(
-        Google_Service_Gmail::GMAIL_READONLY)
+        Google_Service_Gmail::GMAIL_SEND)
 ));
 
 if (php_sapi_name() != 'cli') {
@@ -68,21 +68,4 @@ function expandHomeDirectory($path) {
         $homeDirectory = getenv('HOMEDRIVE') . getenv('HOMEPATH');
     }
     return str_replace('~', realpath($homeDirectory), $path);
-}
-
-// Get the API client and construct the service object.
-$client = getClient();
-$service = new Google_Service_Gmail($client);
-
-// Print the labels in the user's account.
-$user = 'me';
-$results = $service->users_labels->listUsersLabels($user);
-
-if (count($results->getLabels()) == 0) {
-    print "No labels found.\n";
-} else {
-    print "Labels:\n";
-    foreach ($results->getLabels() as $label) {
-        printf("- %s\n", $label->getName());
-    }
 }
