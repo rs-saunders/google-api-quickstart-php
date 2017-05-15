@@ -8,7 +8,7 @@ define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/gmail-php-quickstart.json
 define('SCOPES', implode(' ', array(
-        Google_Service_Gmail::GMAIL_SEND)
+        Google_Service_Gmail::MAIL_GOOGLE_COM)
 ));
 
 if (php_sapi_name() != 'cli') {
